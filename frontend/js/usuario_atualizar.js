@@ -1,3 +1,4 @@
+const token = localStorage.getItem('token')
 let resposta = document.getElementById('resposta')
 let btn_atualizar = document.getElementById('btn_atualizar')
 
@@ -27,7 +28,8 @@ btn_atualizar.addEventListener('click', (e) => {
     fetch(`http://localhost:3000/usuario/${codUsuario}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'autorization': token
         },
         body: JSON.stringify(usuarioAtualizado)
     })

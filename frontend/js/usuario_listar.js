@@ -1,10 +1,15 @@
+const token = localStorage.getItem('token')
 let resposta = document.getElementById('resposta')
 let btn_listar = document.getElementById('btn_listar')
 
 btn_listar.addEventListener('click', (e) => {
     e.preventDefault()
 
-    fetch('http://localhost:3000/usuarios')
+    fetch('http://localhost:3000/usuarios',{
+        headers:{
+            'autorization': token
+        }
+    })
     .then(res => res.json())
     .then(dados => {
         resposta.innerHTML = ''

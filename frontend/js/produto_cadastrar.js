@@ -1,3 +1,4 @@
+const token = localStorage.getItem('token')
 let resposta = document.getElementById('resposta')
 let btn_cadastrar = document.getElementById('btn_cadastrar')
 
@@ -21,7 +22,8 @@ btn_cadastrar.addEventListener('click', (e) => {
     fetch('http://localhost:3000/produto', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'autorization': token
         },
         body: JSON.stringify(produto)
     })

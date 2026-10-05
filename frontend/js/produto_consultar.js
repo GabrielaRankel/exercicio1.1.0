@@ -1,3 +1,4 @@
+const token = localStorage.getItem('token')
 let resposta = document.getElementById('resposta')
 let resposta_nome = document.getElementById('resposta_nome')
 let btn_consultar = document.getElementById('btn_consultar')
@@ -38,7 +39,11 @@ btn_consultar_nome.addEventListener('click', (e) => {
     
     const nome = document.getElementById('nome').value
 
-    fetch(`http://localhost:3000/produto/buscar/${nome}`)
+    fetch(`http://localhost:3000/produto/buscar/${nome}`,{
+        headers:{
+            'autorization': token
+        }
+    })
     .then(res => res.json())
     .then(dados => {
 

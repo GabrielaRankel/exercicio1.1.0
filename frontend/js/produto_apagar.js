@@ -1,3 +1,4 @@
+const token = localStorage.getItem('token')
 let resposta = document.getElementById('resposta')
 let btn_apagar = document.getElementById('btn_apagar')
 
@@ -12,7 +13,10 @@ btn_apagar.addEventListener('click', (e) => {
     }
 
     fetch(`http://localhost:3000/produto/${codProduto}`,{
-        method: 'DELETE'
+        method: 'DELETE',
+        headers:{
+            'autorization': token
+        }
     })
     .then(res => res.json())
     .then(dados => {
