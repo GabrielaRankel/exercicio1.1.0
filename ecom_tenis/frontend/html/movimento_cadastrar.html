@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_cad.css">
+    <script src="../js/movimento_cadastrar.js" defer></script>
+    <title>Cadastrar Movimento</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>&emsp;&emsp;
+            <span class="titulo_menu">Operações</span>&emsp;
+            <a href="./movimento_cadastrar.html">Cadastrar Movimento</a>&emsp;
+            <a href="./movimento_listar.html">Listar Movimento</a>&emsp;
+            <a href="./mov_categoria_listar.html">Listar Por Categoria</a>&emsp;
+            <a href="./mov_historico_saida.html">Listar Histórico Saídas</a>
+            <br><br><hr><br><br><br>
+        </nav>
+    </header>
+    <main>
+        <h1>Registrar Movimentação de Estoque</h1>
+        <br><br>
+        <form>
+            <label for="idUsuario">Código do Usuário (Operador)</label><br>
+            <input type="number" id="idUsuario"><br><br>
+
+            <label for="idProduto">Código do Produto</label><br>
+            <input type="number" id="idProduto"><br><br>
+
+            <label for="tipo">Tipo de Movimentação</label><br>
+            <select id="tipo" style="padding: 5px; width: 180px;">
+                <option value="">Selecione...</option>
+                <option value="ENTRADA">ENTRADA</option>
+                <option value="SAIDA">SAÍDA</option>
+            </select><br><br>
+
+            <label for="qtdeMov">Quantidade Movimentada</label><br>
+            <input type="number" id="qtdeMov"><br><br>
+
+            <label for="data">Data do Movimento</label><br>
+            <input type="date" id="data"><br><br>
+
+            <button id="btn_cadastrar">Registrar Movimento</button><br><br><br>
+        </form>
+        <div id="resposta" class="resposta"></div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+### - testes da API - o REST Client
+
+### - Teste se o servidor está funcionando
+GET http://localhost:3000/
+Content-Type: application/json
+
+### - Teste para Cadastrar o Usuário
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Adalberto",
+    "email": "adalberto@gmail.com",
+    "senha": "123"
+}
+
+### - Teste para Cadastrar o Usuário
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Marcos",
+    "email": "marcos@gmail.com",
+    "senha": "123"
+}
+
+### - Teste para Cadastrar o Usuário
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Ronaldo",
+    "email": "ronaldo@gmail.com",
+    "senha": "123"
+}
+
+
+### - Teste para Listar o Usuário
+
+GET http://localhost:3000/usuarios
+Content-Type: application/json
+
+### - Teste para Consultar o Usuário
+GET http://localhost:3000/usuario/1
+Content-Type: application/json
+
+
+### - Teste para Consultar o Usuário por nome
+GET http://localhost:3000/usuario/buscar/marcos
+Content-Type: application/json
+
+### - Teste para Excluir o Usuário
+DELETE http://localhost:3000/usuario/4
+Content-Type: application/json
+
+### - Teste para Atualizar o Usuário
+PUT http://localhost:3000/usuario/5
+Content-Type: application/json
+
+{
+    "nome": "Rodrigo",
+    "email": "rodrigo@gmail.com",
+    "senha": "456"
+}
+
+
+################################
+
+### - Teste para Cadastrar o Produto
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nome": "Nike",
+    "categoria": "casual",
+    "numero": 38,
+    "quantidade": 20,
+    "precoUnit": 699.99
+}
+
+### - Teste para Cadastrar o Produto
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nome": "Ultraboost",
+    "categoria": "corrida",
+    "numero": 40,
+    "quantidade": 40,
+    "precoUnit": 999.99
+}
+
+### - Teste para Cadastrar o Produto
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nome": "Old Skool Pro",
+    "categoria": "skate",
+    "numero": 40,
+    "quantidade": 20,
+    "precoUnit": 399.99
+}
+
+### - Teste para Listar o Produto
+
+GET http://localhost:3000/produtos
+Content-Type: application/json
+
+### - Teste para Consultar o Produto
+GET http://localhost:3000/produto/1
+Content-Type: application/json
+
+
+### - Teste para Consultar o Produto por nome
+GET http://localhost:3000/produto/buscar/Nike
+Content-Type: application/json
+
+### - Teste para Excluir o Produto
+DELETE http://localhost:3000/produto/4
+Content-Type: application/json
+
+### - Teste para Atualizar o Produto
+PUT http://localhost:3000/produto/3
+Content-Type: application/json
+
+{
+    "nome": "Adidas",
+    "categoria": "superStar",
+    "numero": 42,
+    "quantidade": 10,
+    "precoUnit": 550.00
+}
+
+
+#####################################
+### - Teste para Cadastrar Movimento
+
+POST http://localhost:3000/movimento
+Content-Type: application/json
+
+{
+    "idUsuario": 1,
+    "idProduto": 1,
+    "tipo": "SAIDA",
+    "qtdeMov": 10,
+    "data": "2026-05-25"
+}
+
+### - Teste para Listar o Movimento
+
+GET http://localhost:3000/movimentos
+Content-Type: application/json
+
+### - Teste para Listar valor total por categoria (view)
+
+GET http://localhost:3000/relatorio/categorias
+Content-Type: application/json
+
+
+### - Teste para Listar histórico de saídas (view)
+
+GET http://localhost:3000/relatorio/saidas
+Content-Type: application/json
+
+
