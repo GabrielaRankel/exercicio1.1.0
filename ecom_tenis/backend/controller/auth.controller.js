@@ -16,8 +16,8 @@ const login = async (req, res) => {
             return res.status(404).json({ message: 'Usuario não encontrado!' })
         }
 
-        const bytes = CryptoJS.AES.decrypt(usuario.senha, CHAVE_SECRETA)
-        const senha = bytes.toString(crypto.enc.Utf8)
+        const bytes = cryptoJs.AES.decrypt(usuario.senha, CHAVE_SECRETA)
+const senha = bytes.toString(cryptoJs.enc.Utf8)
 
         if (valores.senha !== senha) {
             return res.status(401).json({ message: 'Senha incorreta, não autorizado!' })
@@ -27,13 +27,12 @@ const login = async (req, res) => {
         const tempoExpirar = Date.now() + UmaHoraEMeia
 
         const payload = {
-            idUsuario: usuario.codusuario,
+            idUsuario: usuario.codUsuario,
             nome: usuario.nome,
             expiraEm: tempoExpirar
         }
 
-        const token = CryptoJS.AES.encrypt(JSON.stringify(payload), CHAVE_SECRETA).toString()
-
+const token = cryptoJs.AES.encrypt(JSON.stringify(payload),CHAVE_SECRETA).toString()
         return res.status(200).json({
             message: 'Login realizado com sucesso',
             nome: usuario.nome,
